@@ -9,65 +9,6 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-/**
- * <p>This class provides a blank canvas in a JFrame
- * that can be used for 2D drawing.  To use it, create an instance
- * of <code>DrawingCanvas</code>, retrieve the <code>Graphics2D</code> object by
- * calling <code>getGraphics()</code>, and use that object to draw your image.
- * Upon instantiation, this class creates a <code>JFrame</code> and makes it visible
- * on the screen.</p>
- *
- * <p>The image can be saved to a file in .png format by calling the <code>save()</code>
- * method, or pressing Command + S (macOS) or Ctrl + S (Windows) in the GUI.</p>
- *
- * <p>By default, the visible image is automatically refreshed at regular intervals by a background
- * thread (auto-redraw).  Changes are not visible until the image is refreshed.  The refresh
- * rate is determined via <code>setRedrawDelay()</code>.  The default delay is determined
- * by the constant <code>DEFAULT_REPAINT_DELAY</code>.  This works well for many cases, but
- * may not be effective for animations.  When creating animations, it is generally
- * better to disable auto-redraw, and refresh the image yourself (perhaps using
- * <code>Thread.sleep</code> to add delay between frames).  Use the
- * <code>setAutoRedraw()</code> method to enable/disable auto-redraw.  When
- * auto-redraw is disabled, call <code>draw()</code> to manually refresh the visib	le image.</p>
- * 
- * <p>Individual pixels can be modified by calling <code>setPixel()</code>.</p>
- * 
- * <p>Example:</p>
- * 
- * <p><pre>
- *     DrawingCanvas canvas = new DrawingCanvas();
- *     Graphics g = canvas.getGraphics();
- *
- *     canvas.setBackground(new Color(255, 255, 0));
- *     g.setColor(new Color(1.0f, 0.0f, 0.0f, 0.5f));
- *     g.fillRect(20, 20, 320, 240);
- * </pre></p>
- *
- * <p>Animation example:</p>
- *
- * <p><pre>
- *     DrawingCanvas canvas = new DrawingCanvas();
- *     canvas.setAutoRedraw(false);
- *     Graphics2D g = canvas.getGraphics();
- *     int n = 300, x = 10, y = 10;
- *     for( int i = 0; i < n; i++ ) {
- *         // Clear
- *         g.setColor(Color.white);
- *         g.fillRect(0, 0, width, height);
- *
- *         // Draw
- *         g.setColor(Color.black);
- *         g.fillRect( x, y, 100, 100 );
- *         canvas.draw();
- *
- *         x++; y++;
- *         Thread.sleep(10);  // delay
- *     }
- * </pre></p>
- * 
- * @author David Wolff
- *
- */
 public class DrawingCanvas {
 	public static final int DEFAULT_REPAINT_DELAY = 100;
 	public static final int DEFAULT_WIDTH = 800;
@@ -84,21 +25,10 @@ public class DrawingCanvas {
 
 	private boolean autoRedraw;
 	
-	/** 
-	 * Creates and displays a new DrawingCanvas of size 640x480.
-	 * By default, auto-redraw is enabled.
-	 */
 	public DrawingCanvas() {
 		this(DEFAULT_WIDTH,DEFAULT_HEIGHT);
 	}
 	
-	/**
-	 * Creates and displays a new DrawingCanvas with the given dimensions.
-	 * By default, auto-redraw is enabled.
-	 * 
-	 * @param w the width of the window.
-	 * @param h the height of the window.
-	 */
 	public DrawingCanvas(int w, int h) {
 		// Create the JFrame
 		frame = new JFrame("Drawing Canvas");
