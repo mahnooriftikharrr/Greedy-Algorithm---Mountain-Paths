@@ -3,6 +3,9 @@
 ## Overview
 This project demonstrates the use of a greedy algorithm to solve the problem of finding optimal paths through a mountain range. The algorithm calculates a "greedy lowest-elevation-change walk" from one side of a map to the other, aiming to minimize the total elevation change with each step. The project also includes a visualization tool to help users identify the lowest-elevation paths on mountain landscapes.
 
+<img width="629" alt="image" src="https://github.com/user-attachments/assets/09bda990-c472-41c9-89a1-39878503b69b" />
+
+
 ## Features
 - **Pathfinding Algorithm**: Implements a greedy approach to navigate through a 2D grid representing the mountain.
 - **Visualization**: Displays the chosen path on the mountain grid for better understanding.
